@@ -71,9 +71,43 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
    - มีปุ่มเมื่อคลิกแล้วจะแสดงข้อความที่กรอกในช่องข้อความ
 ### บันทึกผลการทดลอง 
 ```html
-[บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <!-- ปุ่มที่ 1: Inline JavaScript -->
+    <button onclick="alert('ชื่อนักศึกษา: นูรีน ปิ่นคล้าย')">แสดงชื่อนักศึกษา</button>
+
+    <!-- ปุ่มที่ 2: Internal JavaScript -->
+    <button id="btn2">แสดงวันที่ปัจจุบัน</button>
+
+    <!-- ปุ่มที่ 3: External JavaScript -->
+    <button id="btn3">แสดงเวลาปัจจุบัน</button>
+
+    <hr>
+
+    <!-- กล่องข้อความและปุ่มแสดงผล -->
+    <input type="text" id="userInput" placeholder="พิมพ์ข้อความที่นี่">
+    <button id="showTextBtn">แสดงข้อความ</button>
+    <p id="displayText"></p>
+
+    <!-- Internal JavaScript -->
+    <script>
+        document.getElementById('btn2').onclick = function() {
+            alert("วันที่ปัจจุบัน: " + new Date().toLocaleDateString());
+        };
+    </script>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
 ```
 [รูปผลการทดลองที่ 1]
+<img width="824" alt="image" src="https://github.com/user-attachments/assets/6f3b8001-3cbd-478a-80dd-85e105f41283" />
+
   
 ## การทดลองที่ 2: พื้นฐาน JavaScript
 ### 2.1 การประกาศตัวแปรและชนิดข้อมูล
