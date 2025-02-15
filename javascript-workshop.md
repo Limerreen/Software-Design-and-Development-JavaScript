@@ -163,9 +163,22 @@ let person = {
 
 ### บันทึกผลการทดลอง 2.1
 ```html
-[บันทึกโค้ด ที่นี่]
+let studentId = "67030120";
+let studentName = "นูรีน ปิ่นคล้าย";
+let midtermScore = 80;
+let finalScore = 90;
+
+let person = {
+    name: "studentName",
+    id: 'studentId',
+    major: 'เทคโนโลยีคอมพิวเตอร์',
+    gpa: 3.56
+};
+ console.log(person);
 ```
 [รูปผลการทดลองที่ 2.1]
+<img width="954" alt="image" src="https://github.com/user-attachments/assets/fddfc828-88f1-4965-a4bb-b962dc8aa6c4" />
+
 
 
 ### 2.2 การดำเนินการทางคณิตศาสตร์
