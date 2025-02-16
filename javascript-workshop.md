@@ -230,7 +230,26 @@ number /= 2;          // เท่ากับ number = number / 2
 
 ### บันทึกผลการทดลอง 2.2
 ```html
-[บันทึกโค้ด ที่นี่]
+const { price } = require("./price");
+
+let score1 = 80;
+let score2 = 90;
+let score3 = 85;
+
+export let avgScore = (score1 + score2 + score3) / 3;
+console.log("คะแนนเฉลี่ย:", avgScore.toFixed(2));
+
+
+let productName = "โน้ตบุ๊ค";
+export let price = 30000;
+
+let vat = price * 0.07;
+let totalPrice = price + vat;
+
+console.log("ชื่อสินค้า : " , productName);
+console.log("ราคา : " , price + " บาท");
+console.log("vAT 7% :" , vat + " บาท");
+console.log("ราคารวม vat :" , totalPrice.toFixed(2));
 ```
 [รูปผลการทดลองที่ 2.2]
 
