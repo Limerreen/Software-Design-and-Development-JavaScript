@@ -382,9 +382,56 @@ for (let i = 1; i <= 5; i++) {
 
 ### บันทึกผลการทดลอง 2.3
 ```html
-[บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html land="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="แบบทดสอบที่ 2.3.js"></script>
+</body>
+</html>
+```
+```js
+let number = 3;
+
+if (number % 2 === 0) {
+    console.log(number + " เป็นเลขคู่");
+} else {
+    console.log(number + " เป็นเลขคี่");
+}
+
+console.log("สูตรคูณแม่ 2:");
+for (let i = 1; i <= 12; i++) {
+    console.log(`2 x ${i} = ${2 * i}`);
+}
+
+console.log("\nสูตรคูณแม่ 3:");
+let j = 1;
+while (j <= 12) {
+    console.log(`3 x ${j} = ${3 * j}`);
+    j++;
+}
+console.log("นับถอยหลังจาก 10 ถึง 1:");
+for (let i = 10; i >= 1; i--) {
+    console.log(i);
+}
+
+let age = 25;
+
+if (age >= 0 && age <= 12) {
+    console.log(age + " เป็นวัยเด็ก");
+} else if (age >= 13 && age <= 19) {
+    console.log(age + " เป็นวัยรุ่น");
+} else 
+    console.log(age + " เป็นวัยผู้ใหญ่");
 ```
 [รูปผลการทดลองที่ 2.3]
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/b754125d-c40c-449e-bc52-804f1a544cdd" />
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/793c34ea-791e-4637-bfaf-2b5dd7a332ff" />
+
 
 ### 2.4 Functions และ Arrow Functions
 
@@ -496,10 +543,59 @@ process(function() {
 
 ### บันทึกผลการทดลอง 2.4.1
 ```html
-[บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html land="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="แบบทดสอบที่ 2.4.1.js"></script>
+</body>
+</html>
+```
+```js
+function calculateBMI(weight, height) {
+    let bmi = weight / (height * height);
+    return bmi.toFixed(2);
+}
+// ทดสอบใช้งาน
+console.log("BMI:", calculateBMI(70, 1.75));
+
+function greetUser(name, age) {
+    let message = "";
+
+    if (age < 13) {
+        message = "สวัสดีค่ะหนู " + name;
+    } else if (age < 20) {
+        message = "สวัสดีพวก  " + name;
+    } else {
+        message = "สวัสดีค่ะ คุณ " + name;
+    }
+
+    console.log(message);
+}
+
+// ทดสอบใช้งาน
+greetUser("ชัยยุทธ", 5);
+greetUser("พจมาน", 19);
+greetUser("อารยา", 27);
+
+function checkPassword(password) {
+    if (password.length > 8) {
+        return "รหัสผ่านเหมาะสม";
+    } else {
+        return "รหัสผ่านสั้นเกินไป";
+    }
+}
+
+// ทดสอบใช้งาน
+console.log(checkPassword("77777"));
+console.log(checkPassword("pass03062004"));
 ```
 [รูปผลการทดลองที่ 2.4.1]
-
+<img width="956" alt="image" src="https://github.com/user-attachments/assets/d7be495f-2a06-4066-b601-8ba96349f9e5" />
 
 
 #### 2.4.2 Arrow Function
@@ -539,9 +635,42 @@ console.log("เลขคู่:", evenNumbers); // [2, 4]
 
 ### บันทึกผลการทดลอง 2.4.2
 ```html
-[บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html land="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="แบบทดสอบที่ 2.4.2.js"></script>
+</body>
+</html>
+```js
+const calculateBMI = (weight, height) => (weight / (height ** 2)).toFixed(2);
+
+// ทดสอบใช้งาน
+console.log("BMI:", calculateBMI(54, 1.70)); // น้ำหนัก 54 กก. ส่วนสูง 1.70 เมตร
+
+const greetUser = (name, age) => {
+    return age < 13 ? `สวัสดีค่ะหนู ${name}` :
+           age < 20 ? `สวัสดีพวก ${name}` :
+                      `สวัสดีค่ะ คุณ ${name}`;
+};
+
+// ทดสอบใช้งาน
+console.log(greetUser("ชัยยุทธ", 5));
+console.log(greetUser("พจมาน", 19));
+console.log(greetUser("อารยา", 27));
+
+const checkPassword = password => password.length > 8 ? "รหัสผ่านแข็งแรง" : "รหัสผ่านสั้นเกินไป";
+
+// ทดสอบใช้งาน
+console.log(checkPassword("77777"));
+console.log(checkPassword("pass03062004"));
 ```
 [รูปผลการทดลองที่ 2.4.2]
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/21f1a20e-e35f-47aa-933c-8811a047d6be" />
 
 
 ## การทดลองที่ 3 : การใช้ JavaScript กับ HTML และ CSS
@@ -585,23 +714,7 @@ console.log("เลขคู่:", evenNumbers); // [2, 4]
 ```
 ### ตัวอย่างที่ 3 
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Event Handling</title>
-</head>
-<body>
-    Enter name<input type="text" id="name">
-    <p id="output_value"></p>
-    <button onclick="showMessage(document.getElementById('name').value)">คลิกที่นี่</button>
-    
-    <script>
-    function showMessage(name) {
-        document.getElementById('output_value').innerHTML='Hello' + name;
-    }
-    </script>
-</body>
-</html>
+
 ```
 
 ### แบบทดสอบ 3.1 
@@ -609,9 +722,49 @@ console.log("เลขคู่:", evenNumbers); // [2, 4]
 
 ### บันทึกผลการทดลอง 3.1
 ```html
-[บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำนวณค่า BMI</title>
+</head>
+<body>
+    <h2>คำนวณค่า BMI</h2>
+    <label>น้ำหนัก (กิโลกรัม):</label>
+    <input type="number" id="weight" placeholder="ใส่น้ำหนัก"><br><br>
+
+    <label>ส่วนสูง (เมตร):</label>
+    <input type="number" id="height" placeholder="ใส่ส่วนสูง"><br><br>
+
+    <button onclick="calculateBMI()">คำนวณ BMI</button>
+
+    <p id="result"></p>
+
+    <script>
+        // คำนวณ BMI
+        const calculateBMI = () => {
+            let weight = parseFloat(document.getElementById("weight").value);
+            let height = parseFloat(document.getElementById("height").value);
+
+            if (!weight || !height || height <= 0) {
+                document.getElementById("result").innerHTML = "กรุณากรอกข้อมูลให้ถูกต้อง!";
+                return;
+            }
+
+            let bmi = (weight / (height ** 2)).toFixed(2);
+            let status = bmi < 18.5 ? "ผอม" :
+                         bmi < 24.9 ? "สมส่วน" : "อ้วน";
+
+            document.getElementById("result").innerHTML = `ค่า BMI ของคุณคือ ${bmi} (${status})`;
+        };
+    </script>
+</body>
+</html>
 ```
 [รูปผลการทดลองที่ 3.1]
+<img width="731" alt="image" src="https://github.com/user-attachments/assets/dc503a96-9700-43f7-a025-854ea35b7ef4" />
+
 
 ## การทดลองที่ 3.2 : การสร้างฟอร์มสำหรับจองห้องพัก
 การสร้างฟอร์มลงทะเบียนเพื่อรวบรวมข้อมูลที่จำเป็นสำหรับการจองห้องพัก
@@ -771,14 +924,158 @@ console.log("เลขคู่:", evenNumbers); // [2, 4]
 
 ### บันทึกผลการทดลอง 3.2.2
 ```html
-[บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจองห้องพักออนไลน์</title>
+    <style>
+        /* พื้นหลังสีเทาเข้ม */
+        body {
+            font-family: 'Prompt', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1e1e1e; /* เทาเข้ม */
+            color: #ffffff; /* สีข้อความเป็นขาว */
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #2c2c2c; /* พื้นหลังฟอร์มสีดำเทา */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #dcdcdc; /* สีเทาอ่อน */
+            font-weight: bold;
+        }
+
+        /* ช่องกรอกข้อมูล */
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #555; /* ขอบสีเทากลาง */
+            border-radius: 4px;
+            background-color: #333; /* สีพื้นหลังช่องกรอกข้อมูล */
+            color: #ffffff; /* ตัวอักษรสีขาว */
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #aaaaaa; /* สีเทาสว่างขึ้นตอนโฟกัส */
+            box-shadow: 0 0 8px rgba(170, 170, 170, 0.5);
+        }
+
+        /* ปุ่ม */
+        button {
+            background-color: #444; /* ปุ่มสีเทาเข้ม */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* ปรับปุ่ม Hover */
+        button:hover {
+            background-color: #666; /* เปลี่ยนเป็นเทาสว่างขึ้น */
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>แบบฟอร์มจองห้องพัก</h1>
+    
+    <form id="bookingForm">
+        <div>
+            <label for="fullname">ชื่อ-นามสกุล:</label>
+            <input type="text" id="fullname" name="fullname" required>
+        </div>
+
+        <div>
+            <label for="email">อีเมล:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+            <label for="phone">เบอร์โทรศัพท์:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <div>
+            <label for="checkin">วันที่เช็คอิน:</label>
+            <input type="date" id="checkin" name="checkin" required>
+        </div>
+
+        <div>
+            <label for="checkout">วันที่เช็คเอาท์:</label>
+            <input type="date" id="checkout" name="checkout" required>
+        </div>
+
+        <div>
+            <label for="roomtype">ประเภทห้องพัก:</label>
+            <select id="roomtype" name="roomtype" required>
+                <option value="">กรุณาเลือกประเภทห้องพัก</option>
+                <option value="standard">ห้องมาตรฐาน</option>
+                <option value="deluxe">ห้องดีลักซ์</option>
+                <option value="suite">ห้องสวีท</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="guests">จำนวนผู้เข้าพัก:</label>
+            <input type="number" id="guests" name="guests" min="1" max="4" required>
+        </div>
+
+        <button type="submit">จองห้องพัก</button>
+    </form>
+</body>
+</html>
 ```
 [รูปผลการทดลองที่ 3.2.2]
+<img width="958" alt="image" src="https://github.com/user-attachments/assets/b0527c3e-bf25-4017-8823-75b406469ea2" />
+
+1. ทดลองเปลี่ยน
+🔹 สีพื้นหลังของเว็บ จากสีเทาอ่อนเป็น สีเทาเข้ม (#1e1e1e)
+🔹 สีของฟอร์ม จากสีขาวเป็น สีเทาดำ (#2c2c2c)
+🔹 สีตัวอักษร ในฟอร์มจากสีดำเป็น สีขาว (#ffffff) เพื่อให้ตัดกับพื้นหลัง
+🔹 ปรับช่องกรอกข้อมูล ให้มีพื้นหลัง สีเทาเข้ม (#333) และขอบ สีเทากลาง (#555)
+🔹 ปรับสีปุ่มกดเป็น สีเทาเข้ม (#444) เมื่อโฮเวอร์จะเปลี่ยนเป็น สีเทาสว่าง (#666)
+🔹 เพิ่มเอฟเฟกต์ เงาตอนโฟกัสช่องกรอกข้อมูล และตอนโฮเวอร์ปุ่มเ
+2. ผลลัพธ์
+หน้าเว็บมีโทนมืด ขาว ดำ เทา ตามที่ต้องการ
+ช่องกรอกข้อมูลดูโดดเด่นขึ้น เนื่องจากมีสีขอบที่ชัดเจนขึ้นและเปลี่ยนสีตอนโฟกัส
+ปุ่มดูเป็นมิติมากขึ้น เพราะมีการเปลี่ยนสีและเพิ่มเงาตอนโฮเวอร์
 
 
 ## ขั้นตอนที่ 3.2.3: การเพิ่มฟังก์ชันด้วย JavaScript
 
-เพิ่มโค้ด JavaScript ก่อนปิด `</body>`:
+เพิ่มโค้ด JavaScript ก่อนปิด  `</body>`:
 
 ```html
 <script>
